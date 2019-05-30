@@ -16,11 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     data = JSON.parse(this.responseText);
 
+    let container = new ArticleList(article_list);
     for (let item of data) {
-      let title = new Article(item['title'], item['author'], item['text']);
-      console.log(title);//створюються статті, зосталося тільки трішки доробити...
+      container.addArticle(item);
     }
+    container.render();
   });
 
   xhr.send();
+  document.addEventListener('click', function(event) {
+    let item = event.target;
+    if(item.classList.value === 'cross') {
+
+    }
+  });
 });

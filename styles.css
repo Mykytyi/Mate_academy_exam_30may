@@ -1,0 +1,28 @@
+article {
+  position: relative;
+}
+
+.cross {
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.cross:before, .cross:after {
+  position: absolute;
+  left: 9px;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+.cross:before {
+  transform: rotate(45deg);
+}
+.cross:after {
+  transform: rotate(-45deg);
+}
